@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>睿航教育 Sageward Education Advisory</title>
+<style>
+  @page { size: 1280px 3440px; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Helvetica Neue", Arial, "Noto Sans CJK SC", sans-serif;
+    color: #2e3833; background: #ffffff; width: 1280px;
+  }
+  .serif { font-family: Georgia, "Times New Roman", "Noto Serif CJK SC", serif; }
+  .emerald { background: #143A35; }
+  .ivory { background: #F5F0E4; }
+  .gold { color: #E3C184; }
+  .wrap { width: 1080px; margin: 0 auto; }
+
+  /* ---------- Header ---------- */
+  header { background: #143A35; padding: 26px 0; border-bottom: 1px solid rgba(227,193,132,.35); }
+  .header-in { display: flex; align-items: center; }
+  .brand { display: flex; align-items: center; }
+  .brand img { width: 52px; height: 53px; display: block; }
+  .brand-text { margin-left: 16px; }
+  .brand-cn { font-family: Georgia, "Noto Serif CJK SC", serif; font-size: 27px; font-weight: bold; color: #F5F0E4; letter-spacing: 6px; line-height: 1.1; }
+  .brand-en { font-size: 10.5px; letter-spacing: 3.2px; color: #E3C184; padding-top: 4px; }
+  nav { margin-left: auto; display: flex; align-items: center; }
+  nav span { color: #F5F0E4; font-size: 15px; margin-left: 34px; letter-spacing: 1px; }
+  nav .phone { color: #E3C184; font-weight: bold; font-size: 16px; margin-left: 40px; letter-spacing: .5px; }
+
+  /* ---------- Hero ---------- */
+  .hero { background: #143A35; position: relative; overflow: hidden; padding: 96px 0 104px 0; }
+  .hero-mark { position: absolute; right: -70px; top: 30px; width: 560px; height: 571px; opacity: .16; }
+  .hero-in { position: relative; }
+  .hero-eyebrow { font-size: 13px; letter-spacing: 5px; color: #E3C184; }
+  .hero h1 { font-family: Georgia, "Noto Serif CJK SC", serif; font-size: 96px; font-weight: bold; color: #F5F0E4; letter-spacing: 22px; line-height: 1.15; padding: 26px 0 6px 0; }
+  .hero-tag { font-family: Georgia, serif; font-style: italic; font-size: 30px; color: #E3C184; }
+  .hero-rule { width: 72px; border-top: 3px solid #E3C184; margin: 40px 0 34px 0; font-size: 0; line-height: 0; }
+  .hero-desc1 { font-size: 16px; letter-spacing: 3px; color: #F5F0E4; }
+  .hero-desc2 { font-family: Georgia, serif; font-style: italic; font-size: 19px; color: rgba(245,240,228,.85); padding-top: 12px; }
+  .hero-cn { font-size: 21px; color: #F5F0E4; letter-spacing: 2px; padding-top: 26px; }
+  .hero-cta { margin-top: 48px; display: flex; align-items: center; }
+  .btn-gold { background: #E3C184; color: #143A35; font-size: 18px; font-weight: bold; letter-spacing: 1px; padding: 17px 36px; border-radius: 4px; }
+  .hero-wechat { color: rgba(245,240,228,.9); font-size: 15.5px; margin-left: 30px; letter-spacing: 1px; }
+
+  /* ---------- Seminar ---------- */
+  .seminar { background: #F5F0E4; padding: 74px 0; }
+  .seminar-card { border: 1.5px solid #E3C184; background: #fffdf8; padding: 44px 52px; display: flex; align-items: center; }
+  .sem-left { width: 322px; flex: none; border-right: 1px solid rgba(20,58,53,.18); padding-right: 40px; }
+  .sem-label { font-size: 12.5px; letter-spacing: 4px; color: #a8842f; font-weight: bold; }
+  .sem-date { font-family: Georgia, "Noto Serif CJK SC", serif; font-size: 32px; font-weight: bold; color: #143A35; line-height: 1.3; padding-top: 14px; white-space: nowrap; }
+  .sem-time { font-size: 17px; color: #4a554e; padding-top: 8px; letter-spacing: 1px; }
+  .sem-mid { padding: 0 40px; flex: 1; }
+  .sem-title { font-family: Georgia, "Noto Serif CJK SC", serif; font-size: 27px; font-weight: bold; color: #143A35; line-height: 1.5; }
+  .sem-meta { font-size: 15.5px; color: #4a554e; line-height: 1.9; padding-top: 16px; }
+  .sem-qr { flex: none; text-align: center; }
+  .sem-qr img { width: 118px; height: 118px; display: block; }
+  .sem-qr div { font-size: 12.5px; color: #4a554e; padding-top: 9px; letter-spacing: 1px; }
+
+  /* ---------- Sections ---------- */
+  section.block { padding: 92px 0; }
+  .sec-eyebrow { font-size: 12.5px; letter-spacing: 5px; color: #a8842f; font-weight: bold; text-align: center; }
+  .sec-title { font-family: Georgia, "Noto Serif CJK SC", serif; font-size: 42px; font-weight: bold; color: #143A35; text-align: center; padding-top: 14px; letter-spacing: 4px; }
+  .sec-rule { width: 56px; border-top: 3px solid #E3C184; margin: 26px auto 0 auto; font-size: 0; line-height: 0; }
+
+  .cards { display: flex; margin-top: 58px; }
+  .card { width: 252px; background: #F5F0E4; padding: 38px 28px 40px 28px; border-top: 4px solid #143A35; }
+  .card + .card { margin-left: 24px; }
+  .card.gold-top { border-top-color: #E3C184; background: #143A35; }
+  .card-num { font-family: Georgia, serif; font-size: 15px; color: #a8842f; letter-spacing: 2px; }
+  .card h3 { font-family: Georgia, "Noto Serif CJK SC", serif; font-size: 23px; font-weight: bold; color: #143A35; padding-top: 14px; letter-spacing: 1px; }
+  .card .en { font-size: 11px; letter-spacing: 1.6px; color: #7a8178; padding-top: 7px; line-height: 1.6; }
+  .card p { font-size: 14.5px; line-height: 1.85; color: #4a554e; padding-top: 16px; }
+  .card .price { font-family: Georgia, serif; font-size: 31px; font-weight: bold; color: #E3C184; padding-top: 14px; }
+  .card .price small { font-size: 15px; font-family: "Noto Sans CJK SC", sans-serif; }
+  .card.gold-top h3 { color: #F5F0E4; }
+  .card.gold-top .en { color: rgba(227,193,132,.75); }
+  .card.gold-top p { color: rgba(245,240,228,.88); }
+  .card.gold-top .card-num { color: #E3C184; }
+
+  /* ---------- About ---------- */
+  .about { background: #143A35; padding: 92px 0; }
+  .about-in { display: flex; }
+  .about-panel { width: 340px; flex: none; border: 1.5px solid rgba(227,193,132,.55); text-align: center; padding: 52px 30px 46px 30px; }
+  .about-panel img { width: 128px; height: 130px; }
+  .about-panel .p-name { font-family: Georgia, serif; font-size: 25px; font-weight: bold; color: #F5F0E4; padding-top: 26px; letter-spacing: 1px; }
+  .about-panel .p-title { font-size: 12px; letter-spacing: 2.6px; color: #E3C184; padding-top: 12px; line-height: 2; }
+  .about-text { padding-left: 68px; }
+  .about-eyebrow { font-size: 12.5px; letter-spacing: 5px; color: #E3C184; font-weight: bold; }
+  .about-text h2 { font-family: Georgia, "Noto Serif CJK SC", serif; font-size: 40px; font-weight: bold; color: #F5F0E4; padding-top: 14px; letter-spacing: 3px; }
+  .about-text .body { font-size: 16.5px; line-height: 2.05; color: rgba(245,240,228,.92); padding-top: 26px; }
+  .about-points { display: flex; margin-top: 34px; }
+  .about-points div { border-left: 3px solid #E3C184; padding-left: 16px; margin-right: 40px; }
+  .about-points b { display: block; font-family: Georgia, "Noto Serif CJK SC", serif; font-size: 19px; color: #F5F0E4; padding-bottom: 5px; }
+  .about-points span { font-size: 13.5px; color: rgba(245,240,228,.75); }
+
+  /* ---------- Contact ---------- */
+  .contact { background: #F5F0E4; padding: 88px 0; text-align: center; }
+  .contact h2 { font-family: Georgia, "Noto Serif CJK SC", serif; font-size: 40px; font-weight: bold; color: #143A35; letter-spacing: 3px; }
+  .contact .sub { font-size: 17px; color: #4a554e; padding-top: 16px; letter-spacing: 1px; }
+  .contact .btn-gold { display: inline-block; margin-top: 38px; }
+  .contact-lines { margin-top: 44px; font-size: 16px; color: #143A35; letter-spacing: 1px; }
+  .contact-lines span { margin: 0 18px; }
+  .contact-lines b { color: #a8842f; }
+
+  /* ---------- Footer ---------- */
+  footer { background: #143A35; padding: 54px 0 48px 0; text-align: center; }
+  footer img { width: 46px; height: 47px; }
+  .foot-cn { font-family: Georgia, "Noto Serif CJK SC", serif; font-size: 21px; font-weight: bold; color: #F5F0E4; letter-spacing: 6px; padding-top: 18px; }
+  .foot-en { font-size: 10px; letter-spacing: 3px; color: #E3C184; padding-top: 7px; }
+  .foot-tag { font-family: Georgia, serif; font-style: italic; font-size: 14.5px; color: rgba(245,240,228,.7); padding-top: 14px; }
+  .foot-contacts { font-size: 13.5px; color: rgba(245,240,228,.85); padding-top: 22px; letter-spacing: .5px; line-height: 2; }
+  .foot-copy { font-size: 12px; color: rgba(245,240,228,.45); padding-top: 24px; letter-spacing: 1px; }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="wrap header-in">
+    <div class="brand">
+      <img src="flyer-assets/mark-gold.png" alt="Sageward">
+      <div class="brand-text">
+        <div class="brand-cn">睿航教育</div>
+        <div class="brand-en">SAGEWARD EDUCATION ADVISORY</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#services" style="color:#F5F0E4;font-size:15px;margin-left:34px;letter-spacing:1px;text-decoration:none">服务项目</a><a href="#seminar" style="color:#F5F0E4;font-size:15px;margin-left:34px;letter-spacing:1px;text-decoration:none">公开讲座</a><a href="#about" style="color:#F5F0E4;font-size:15px;margin-left:34px;letter-spacing:1px;text-decoration:none">关于创始人</a><a href="#contact" style="color:#F5F0E4;font-size:15px;margin-left:34px;letter-spacing:1px;text-decoration:none">联系我们</a>
+      <a class="phone" href="tel:+19493310000" style="text-decoration:none">949-331-0000</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<div class="hero">
+  <img class="hero-mark" src="flyer-assets/mark-gold.png" alt="">
+  <div class="wrap hero-in">
+    <div class="hero-eyebrow">SAGEWARD EDUCATION ADVISORY</div>
+    <h1>睿航教育</h1>
+    <div class="hero-tag">&ldquo;Wisdom for the Journey Ahead.&rdquo;</div>
+    <div class="hero-rule">&nbsp;</div>
+    <div class="hero-desc1">COLLEGE ADMISSIONS &amp; EDUCATIONAL PLANNING</div>
+    <div class="hero-desc2">Personalized Guidance for Every Student</div>
+    <div class="hero-cn">美国本科 · 高中申请与长期规划 — 为每一个孩子量身定制</div>
+    <div class="hero-cta">
+      <a class="btn-gold" href="tel:+19493310000" style="text-decoration:none">预约首次咨询 · 前30分钟免费</a>
+      <div class="hero-wechat">微信咨询：truenancy&nbsp;&nbsp;|&nbsp;&nbsp;电话：949-331-0000</div>
+    </div>
+  </div>
+</div>
+
+<!-- Seminar -->
+<div class="seminar" id="seminar">
+  <div class="wrap">
+    <div class="seminar-card">
+      <div class="sem-left">
+        <div class="sem-label">公开讲座 · 首场</div>
+        <div class="sem-date">2026年11月8日</div>
+        <div class="sem-time">周日 1:00 – 4:00 PM</div>
+      </div>
+      <div class="sem-mid">
+        <div class="sem-title">一份申请的生命旅程<br>— 从耶鲁、斯坦福看美国本科申请的审核机制</div>
+        <div class="sem-meta">地点：930 Roosevelt, Irvine（办公大楼接待大厅）<br>报名 / 咨询：微信 truenancy · 电话 949-331-0000</div>
+      </div>
+      <div class="sem-qr">
+        <img src="flyer-assets/qr-wechat.png" alt="微信二维码">
+        <div>扫码加微信报名</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Services -->
+<section class="block" id="services">
+  <div class="wrap">
+    <div class="sec-eyebrow">OUR SERVICES</div>
+    <div class="sec-title">服务项目</div>
+    <div class="sec-rule">&nbsp;</div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-num">01</div>
+        <h3>美本申请规划</h3>
+        <div class="en">U.S. UNDERGRADUATE ADMISSIONS</div>
+        <p>面向美国本地高中生，从学业规划、活动设计到选校、文书与面试，系统规划通往理想大学的每一步。</p>
+      </div>
+      <div class="card">
+        <div class="card-num">02</div>
+        <h3>美高申请规划</h3>
+        <div class="en">U.S. HIGH SCHOOL ADMISSIONS</div>
+        <p>美国高中申请的选校、文书与面试准备，结合孩子的特点与家庭的目标，陪孩子迈好赴美求学的第一步。</p>
+      </div>
+      <div class="card gold-top">
+        <div class="card-num">03</div>
+        <h3>全程规划</h3>
+        <div class="en">COMPREHENSIVE ANNUAL PLANNING</div>
+        <div class="price">全程陪伴</div>
+        <p>按学年签约，一学年全程陪伴：规划、选校、文书、面试与申请递交一站式跟进，让家长安心、孩子有方向。</p>
+      </div>
+      <div class="card">
+        <div class="card-num">04</div>
+        <h3>单项服务</h3>
+        <div class="en">INDIVIDUAL SERVICES</div>
+        <p>选校咨询、文书指导、模拟面试等，可按需单项选择、灵活组合。首次咨询前30分钟免费。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<div class="about" id="about">
+  <div class="wrap about-in">
+    <div class="about-panel">
+      <img src="flyer-assets/mark-gold.png" alt="Sageward">
+      <div class="p-name">Nancy Cheng</div>
+      <div class="p-title">创始人 · 首席规划顾问<br>FOUNDER &amp; CHIEF PLANNING ADVISOR</div>
+    </div>
+    <div class="about-text">
+      <div class="about-eyebrow">ABOUT THE FOUNDER</div>
+      <h2>关于创始人</h2>
+      <p class="body">Nancy 于 2003 年进入教育行业，首站担任西北大学法学院成教院辅导员，此后二十年深耕教育与升学规划。她是四位孩子的母亲，长子于 2026 年秋入读康奈尔大学（Cornell University）。既懂教育、也懂家长 — 睿航教育以家长与教育人的双重视角，为每一个家庭量身定制规划，陪孩子走稳申请之路。</p>
+      <div class="about-points">
+        <div><b>自 2003 年</b><span>20 年教育人</span></div>
+        <div><b>康奈尔妈妈</b><span>长子 2026 秋入读 Cornell</span></div>
+        <div><b>尔湾本地</b><span>中英双语服务</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Contact -->
+<div class="contact" id="contact">
+  <div class="wrap">
+    <h2>预约首次咨询</h2>
+    <div class="sub">首次咨询前 30 分钟免费 — 先聊聊孩子的目标与现状，再决定如何规划。</div>
+    <a class="btn-gold" href="tel:+19493310000" style="text-decoration:none">电话预约：949-331-0000</a>
+    <div class="contact-lines">
+      <span><b>微信</b> truenancy</span>·<span><b>邮箱</b> <a href="mailto:nancyjcheng@gmail.com" style="color:#143A35">nancyjcheng@gmail.com</a></span>·<span><b>办公室</b> 930 Roosevelt, Suite 104, Irvine, CA 92620</span>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="wrap">
+    <img src="flyer-assets/mark-gold.png" alt="Sageward">
+    <div class="foot-cn">睿航教育</div>
+    <div class="foot-en">SAGEWARD EDUCATION ADVISORY</div>
+    <div class="foot-tag">&ldquo;Wisdom for the Journey Ahead.&rdquo;</div>
+    <div class="foot-contacts">电话 949-331-0000&nbsp;&nbsp;·&nbsp;&nbsp;邮箱 nancyjcheng@gmail.com&nbsp;&nbsp;·&nbsp;&nbsp;微信 truenancy<br>930 Roosevelt, Suite 104, Irvine, CA 92620</div>
+    <div class="foot-copy">© 2026 睿航教育 Sageward Education Advisory</div>
+  </div>
+</footer>
+
+</body>
+</html>
