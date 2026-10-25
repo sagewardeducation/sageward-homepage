@@ -2,19 +2,20 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>睿航教育 Sageward Education Advisory</title>
 <style>
   @page { size: 1280px 3440px; margin: 0; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     font-family: "Helvetica Neue", Arial, "Noto Sans CJK SC", sans-serif;
-    color: #2e3833; background: #ffffff; width: 1280px;
+    color: #2e3833; background: #ffffff; width: 100%;
   }
   .serif { font-family: Georgia, "Times New Roman", "Noto Serif CJK SC", serif; }
   .emerald { background: #143A35; }
   .ivory { background: #F5F0E4; }
   .gold { color: #E3C184; }
-  .wrap { width: 1080px; margin: 0 auto; }
+  .wrap { width: min(1080px, 92%); margin: 0 auto; }
 
   /* ---------- Header ---------- */
   header { background: #143A35; padding: 26px 0; border-bottom: 1px solid rgba(227,193,132,.35); }
@@ -30,7 +31,7 @@
 
   /* ---------- Hero ---------- */
   .hero { background: #143A35; position: relative; overflow: hidden; padding: 96px 0 104px 0; }
-  .hero-mark { position: absolute; right: -70px; top: 30px; width: 560px; height: 571px; opacity: .16; }
+  .hero-mark { position: absolute; right: 24px; top: 30px; width: min(560px, 42vw); height: auto; opacity: .16; }
   .hero-in { position: relative; }
   .hero-eyebrow { font-size: 13px; letter-spacing: 5px; color: #E3C184; }
   .hero h1 { font-family: Georgia, "Noto Serif CJK SC", serif; font-size: 96px; font-weight: bold; color: #F5F0E4; letter-spacing: 22px; line-height: 1.15; padding: 26px 0 6px 0; }
@@ -111,6 +112,30 @@
   .foot-tag { font-family: Georgia, serif; font-style: italic; font-size: 14.5px; color: rgba(245,240,228,.7); padding-top: 14px; }
   .foot-contacts { font-size: 13.5px; color: rgba(245,240,228,.85); padding-top: 22px; letter-spacing: .5px; line-height: 2; }
   .foot-copy { font-size: 12px; color: rgba(245,240,228,.45); padding-top: 24px; letter-spacing: 1px; }
+
+  /* ---------- Responsive: same page adapts to screen width ---------- */
+  .cards { flex-wrap: wrap; }
+  .card { flex: 1 1 220px; }
+  @media (max-width: 900px) {
+    .header-in { flex-wrap: wrap; }
+    nav { margin-left: 0; margin-top: 18px; flex-wrap: wrap; }
+    nav span, nav .phone { margin-left: 0; margin-right: 22px; margin-top: 8px; }
+    .hero { padding: 56px 0 64px 0; }
+    .hero h1 { font-size: 56px; letter-spacing: 10px; }
+    .hero-mark { width: 300px; top: 20px; }
+    .hero-cta { flex-wrap: wrap; }
+    .hero-wechat { margin-left: 0; margin-top: 16px; }
+    .seminar-card { flex-wrap: wrap; padding: 32px 24px; }
+    .sem-left { width: 100%; border-right: none; padding-right: 0; padding-bottom: 20px; }
+    .sem-mid { padding: 0; }
+    .sem-qr { margin-top: 24px; }
+    .about-in { flex-wrap: wrap; }
+    .about-panel { width: 100%; }
+    .about-text { padding-left: 0; padding-top: 36px; }
+    .about-points { flex-wrap: wrap; }
+    .about-points div { margin-bottom: 18px; }
+    .sec-title, .about-text h2, .contact h2 { font-size: 32px; }
+  }
 </style>
 </head>
 <body>
