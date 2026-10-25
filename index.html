@@ -112,6 +112,24 @@
   .foot-contacts { font-size: 13.5px; color: rgba(245,240,228,.85); padding-top: 22px; letter-spacing: .5px; line-height: 2; }
   .foot-copy { font-size: 12px; color: rgba(245,240,228,.45); padding-top: 24px; letter-spacing: 1px; }
 
+
+  /* ---------- Chat widget ---------- */
+  .wx { cursor: pointer; border-bottom: 1px dashed #a8842f; }
+  .wx:hover { color: #a8842f; }
+  .chat-fab { position: fixed; right: 28px; bottom: 28px; z-index: 999; width: 64px; height: 64px; border-radius: 50%; background: #E3C184; border: none; cursor: pointer; box-shadow: 0 6px 20px rgba(0,0,0,.25); font-size: 30px; line-height: 1; }
+  .chat-panel { position: fixed; right: 28px; bottom: 108px; z-index: 998; width: 320px; background: #fffdf8; border: 1.5px solid #E3C184; border-radius: 12px; box-shadow: 0 12px 32px rgba(0,0,0,.22); padding: 24px 24px 20px; display: none; text-align: center; }
+  .chat-panel.open { display: block; }
+  .chat-panel h3 { font-family: Georgia, "Noto Serif CJK SC", serif; font-size: 20px; color: #143A35; letter-spacing: 2px; }
+  .chat-panel .chat-qr img { width: 150px; height: 150px; margin: 16px auto 8px; display: block; }
+  .chat-panel .chat-wx { font-size: 17px; color: #143A35; }
+  .chat-panel .chat-wx b { color: #a8842f; }
+  .chat-panel .chat-note { font-size: 13.5px; color: #4a554e; line-height: 1.8; padding-top: 10px; }
+  .chat-panel .chat-close { position: absolute; top: 10px; right: 14px; background: none; border: none; font-size: 20px; color: #7a8178; cursor: pointer; }
+  .chat-toast { position: fixed; left: 50%; bottom: 110px; transform: translateX(-50%); z-index: 1000; background: #143A35; color: #F5F0E4; font-size: 15px; padding: 12px 22px; border-radius: 24px; display: none; white-space: nowrap; }
+  .chat-toast.show { display: block; }
+  .contact-lines .cl-row { padding-top: 12px; }
+  .contact-lines .cl-row:first-child { padding-top: 0; }
+
 </style>
 </head>
 <body>
@@ -146,7 +164,7 @@
     <div class="hero-cn">美国本科 · 高中申请与长期规划 — 为每一个孩子量身定制</div>
     <div class="hero-cta">
       <a class="btn-gold" href="tel:+19493310000" style="text-decoration:none">预约首次咨询 · 前30分钟免费</a>
-      <div class="hero-wechat">微信咨询：truenancy&nbsp;&nbsp;|&nbsp;&nbsp;电话：949-331-0000</div>
+      <div class="hero-wechat">微信咨询：<span class="wx" data-wx="truenancy" title="点击复制微信号">truenancy</span>&nbsp;&nbsp;|&nbsp;&nbsp;电话：949-331-0000</div>
     </div>
   </div>
 </div>
@@ -162,7 +180,7 @@
       </div>
       <div class="sem-mid">
         <div class="sem-title">一份申请的生命旅程<br>— 从耶鲁、斯坦福看美国本科申请的审核机制</div>
-        <div class="sem-meta">地点：930 Roosevelt, Irvine（办公大楼接待大厅）<br>报名 / 咨询：微信 truenancy · 电话 949-331-0000</div>
+        <div class="sem-meta">地点：930 Roosevelt, Irvine（办公大楼接待大厅）<br>报名 / 咨询：微信 <span class="wx" data-wx="truenancy" title="点击复制微信号">truenancy</span> · 电话 949-331-0000</div>
       </div>
       <div class="sem-qr">
         <img src="flyer-assets/qr-wechat.png" alt="微信二维码">
@@ -236,7 +254,8 @@
     <div class="sub">首次咨询前 30 分钟免费 — 先聊聊孩子的目标与现状，再决定如何规划。</div>
     <a class="btn-gold" href="tel:+19493310000" style="text-decoration:none">电话预约：949-331-0000</a>
     <div class="contact-lines">
-      <span><b>微信</b> truenancy</span>·<span><b>邮箱</b> <a href="mailto:nancyjcheng@gmail.com" style="color:#143A35">nancyjcheng@gmail.com</a></span>·<span><b>办公室</b> 930 Roosevelt, Suite 104, Irvine, CA 92620</span>
+      <div class="cl-row"><span><b>微信</b> <span class="wx" data-wx="truenancy" title="点击复制微信号">truenancy</span></span>·<span><b>邮箱</b> <a href="mailto:nancyjcheng@gmail.com" style="color:#143A35">nancyjcheng@gmail.com</a></span></div>
+      <div class="cl-row"><span><b>办公室</b> 930 Roosevelt, Suite 104, Irvine, CA 92620</span></div>
     </div>
   </div>
 </div>
@@ -248,10 +267,52 @@
     <div class="foot-cn">睿航教育</div>
     <div class="foot-en">SAGEWARD EDUCATION ADVISORY</div>
     <div class="foot-tag">&ldquo;Wisdom for the Journey Ahead.&rdquo;</div>
-    <div class="foot-contacts">电话 949-331-0000&nbsp;&nbsp;·&nbsp;&nbsp;邮箱 nancyjcheng@gmail.com&nbsp;&nbsp;·&nbsp;&nbsp;微信 truenancy<br>930 Roosevelt, Suite 104, Irvine, CA 92620</div>
+    <div class="foot-contacts">电话 949-331-0000&nbsp;&nbsp;·&nbsp;&nbsp;邮箱 nancyjcheng@gmail.com&nbsp;&nbsp;·&nbsp;&nbsp;微信 <span class="wx" data-wx="truenancy" title="点击复制微信号">truenancy</span><br>930 Roosevelt, Suite 104, Irvine, CA 92620</div>
     <div class="foot-copy">© 2026 睿航教育 Sageward Education Advisory</div>
   </div>
 </footer>
+
+<button class="chat-fab" id="chatFab" aria-label="微信咨询">💬</button>
+<div class="chat-panel" id="chatPanel">
+  <button class="chat-close" id="chatClose">×</button>
+  <h3>微信咨询</h3>
+  <div class="chat-qr"><img src="flyer-assets/qr-wechat.png" alt="微信二维码"></div>
+  <div class="chat-wx">微信号：<b class="wx" data-wx="truenancy" title="点击复制微信号">truenancy</b>（点击复制）</div>
+  <div class="chat-note">扫码或复制微信号添加<br>电话：<a href="tel:+19493310000" style="color:#143A35">949-331-0000</a><br>首次咨询前 30 分钟免费</div>
+</div>
+<div class="chat-toast" id="chatToast">已复制微信号，去微信粘贴添加</div>
+<script>
+(function(){
+  var toast = document.getElementById('chatToast');
+  var timer = null;
+  function showToast(){
+    toast.className = 'chat-toast show';
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(function(){ toast.className = 'chat-toast'; }, 2200);
+  }
+  function copyWx(text){
+    function fallback(){
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); } catch(e){}
+      document.body.removeChild(ta); showToast();
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(showToast).catch(fallback);
+    } else { fallback(); }
+  }
+  var els = document.querySelectorAll('.wx');
+  for (var i = 0; i < els.length; i++) {
+    els[i].addEventListener('click', function(){ copyWx(this.getAttribute('data-wx') || 'truenancy'); });
+  }
+  var panel = document.getElementById('chatPanel');
+  document.getElementById('chatFab').addEventListener('click', function(){
+    panel.className = panel.className.indexOf('open') >= 0 ? 'chat-panel' : 'chat-panel open';
+  });
+  document.getElementById('chatClose').addEventListener('click', function(){ panel.className = 'chat-panel'; });
+})();
+</script>
 
 </body>
 </html>
