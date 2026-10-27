@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1080">
+<title>Sageward Education Advisory</title>
+<style>
+  @page { size: 1280px 5400px; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Helvetica Neue", Arial, "Noto Sans CJK SC", sans-serif;
+    color: #2e3833; background: #ffffff;
+  }
+  .serif { font-family: Georgia, "Times New Roman", "Noto Serif CJK SC", serif; }
+  .emerald { background: #143A35; }
+  .ivory { background: #F5F0E4; }
+  .gold { color: #E3C184; }
+  .wrap { width: 1080px; margin: 0 auto; }
+
+  /* ---------- Header ---------- */
+  header { background: #143A35; padding: 26px 0; border-bottom: 1px solid rgba(227,193,132,.35); }
+  .header-in { display: flex; align-items: center; }
+  .brand { display: flex; align-items: center; }
+  .brand img { width: 52px; height: 53px; display: block; }
+  .brand-text { margin-left: 16px; }
+  .brand-cn { font-family: Georgia, "Noto Serif CJK SC", serif; font-size: 27px; font-weight: bold; color: #F5F0E4; letter-spacing: 6px; line-height: 1.1; }
+  .brand-en { font-size: 10.5px; letter-spacing: 3.2px; color: #E3C184; padding-top: 4px; }
+  nav { margin-left: auto; display: flex; align-items: center; }
+  nav span { color: #F5F0E4; font-size: 15px; margin-left: 34px; letter-spacing: 1px; }
+  nav .phone { color: #E3C184; font-weight: bold; font-size: 16px; margin-left: 40px; letter-spacing: .5px; }
+
+  /* ---------- Hero ---------- */
+  .hero { background: #143A35; position: relative; overflow: hidden; padding: 96px 0 104px 0; }
+  .hero-mark { position: absolute; right: 0px; top: 30px; width: 490px; height: 499px; opacity: .16; }
+  .hero-in { position: relative; }
+  .hero-eyebrow { font-size: 13px; letter-spacing: 5px; color: #E3C184; }
+  .hero h1 { font-family: Georgia, "Noto Serif CJK SC", serif; font-size: 96px; font-weight: bold; color: #F5F0E4; letter-spacing: 22px; line-height: 1.15; padding: 26px 0 6px 0; }
+  .hero-tag { font-family: Georgia, serif; font-style: italic; font-size: 30px; color: #E3C184; }
+  .hero-rule { width: 72px; border-top: 3px solid #E3C184; margin: 40px 0 34px 0; font-size: 0; line-height: 0; }
+  .hero-desc1 { font-size: 16px; letter-spacing: 3px; color: #F5F0E4; }
+  .hero-desc2 { font-family: Georgia, serif; font-style: italic; font-size: 19px; color: rgba(245,240,228,.85); padding-top: 12px; }
+  .hero-cn { font-size: 21px; color: #F5F0E4; letter-spacing: 2px; padding-top: 26px; }
+  .hero-cta { margin-top: 48px; display: flex; align-items: center; }
+  .btn-gold { background: #E3C184; color: #143A35; font-size: 18px; font-weight: bold; letter-spacing: 1px; padding: 17px 36px; border-radius: 4px; }
+  .hero-wechat { color: rgba(245,240,228,.9); font-size: 15.5px; margin-left: 30px; letter-spacing: 1px; }
+
+  /* ---------- Seminar ---------- */
+  .seminar { background: #F5F0E4; padding: 74px 0; }
+  .seminar-card { border: 1.5px solid #E3C184; background: #fffdf8; padding: 44px 52px; display: flex; align-items: center; }
+  .sem-left { width: 322px; flex: none; border-right: 1px solid rgba(20,58,53,.18); padding-right: 40px; }
+  .sem-label { font-size: 12.5px; letter-spacing: 4px; color: #a8842f; font-weight: bold; }
+  .sem-date { font-family: Georgia, "Noto Serif CJK SC", serif; font-size: 32px; font-weight: bold; color: #143A35; line-height: 1.3; padding-top: 14px; white-space: nowrap; }
+  .sem-time { font-size: 17px; color: #4a554e; padding-top: 8px; letter-spacing: 1px; }
+  .sem-mid { padding: 0 40px; flex: 1; }
+  .sem-title { font-family: Georgia, "Noto Serif CJK SC", serif; font-size: 27px; font-weight: bold; color: #143A35; line-height: 1.5; }
+  .sem-meta { font-size: 15.5px; color: #4a554e; line-height: 1.9; padding-top: 16px; }
+  .sem-qr { flex: none; text-align: center; }
+  .sem-qr img { width: 118px; height: 118px; display: block; }
+  .sem-qr div { font-size: 12.5px; color: #4a554e; padding-top: 9px; letter-spacing: 1px; }
+
+  /* ---------- Sections ---------- */
+  section.block { padding: 92px 0; }
+  .sec-eyebrow { font-size: 12.5px; letter-spacing: 5px; color: #a8842f; font-weight: bold; text-align: center; }
+  .sec-title { font-family: Georgia, "Noto Serif CJK SC", serif; font-size: 42px; font-weight: bold; color: #143A35; text-align: center; padding-top: 14px; letter-spacing: 4px; }
+  .sec-rule { width: 56px; border-top: 3px solid #E3C184; margin: 26px auto 0 auto; font-size: 0; line-height: 0; }
+
+  .cards { display: flex; margin-top: 58px; }
+  .card { width: 252px; background: #F5F0E4; padding: 38px 28px 40px 28px; border-top: 4px solid #143A35; }
+  .card + .card { margin-left: 24px; }
+  .card.gold-top { border-top-color: #E3C184; background: #143A35; }
+  .card-num { font-family: Georgia, serif; font-size: 15px; color: #a8842f; letter-spacing: 2px; }
+  .card h3 { font-family: Georgia, "Noto Serif CJK SC", serif; font-size: 23px; font-weight: bold; color: #143A35; padding-top: 14px; letter-spacing: 1px; }
+  .card .en { font-size: 11px; letter-spacing: 1.6px; color: #7a8178; padding-top: 7px; line-height: 1.6; }
+  .card p { font-size: 14.5px; line-height: 1.85; color: #4a554e; padding-top: 16px; }
+  .card .price { font-family: Georgia, serif; font-size: 31px; font-weight: bold; color: #E3C184; padding-top: 14px; }
+  .card .price small { font-size: 15px; font-family: "Noto Sans CJK SC", sans-serif; }
+  .card.gold-top h3 { color: #F5F0E4; }
+  .card.gold-top .en { color: rgba(227,193,132,.75); }
+  .card.gold-top p { color: rgba(245,240,228,.88); }
+  .card.gold-top .card-num { color: #E3C184; }
+
+  /* ---------- About ---------- */
+  .about { background: #143A35; padding: 92px 0; }
+  .about-in { display: flex; }
+  .about-panel { width: 340px; flex: none; border: 1.5px solid rgba(227,193,132,.55); text-align: center; padding: 52px 30px 46px 30px; }
+  .about-panel img { width: 128px; height: 130px; }
+  .about-panel .p-name { font-family: Georgia, serif; font-size: 25px; font-weight: bold; color: #F5F0E4; padding-top: 26px; letter-spacing: 1px; }
+  .about-panel .p-title { font-size: 12px; letter-spacing: 2.6px; color: #E3C184; padding-top: 12px; line-height: 2; }
+  .about-text { padding-left: 68px; }
+  .about-eyebrow { font-size: 12.5px; letter-spacing: 5px; color: #E3C184; font-weight: bold; }
+  .about-text h2 { font-family: Georgia, "Noto Serif CJK SC", serif; font-size: 40px; font-weight: bold; color: #F5F0E4; padding-top: 14px; letter-spacing: 3px; }
+  .about-text .body { font-size: 16.5px; line-height: 2.05; color: rgba(245,240,228,.92); padding-top: 26px; }
+  .about-points { display: flex; margin-top: 34px; }
+  .about-points div { border-left: 3px solid #E3C184; padding-left: 16px; margin-right: 40px; }
+  .about-points b { display: block; font-family: Georgia, "Noto Serif CJK SC", serif; font-size: 19px; color: #F5F0E4; padding-bottom: 5px; }
+  .about-points span { font-size: 13.5px; color: rgba(245,240,228,.75); }
+
+  /* ---------- Contact ---------- */
+  .contact { background: #F5F0E4; padding: 88px 0; text-align: center; }
+  .contact h2 { font-family: Georgia, "Noto Serif CJK SC", serif; font-size: 40px; font-weight: bold; color: #143A35; letter-spacing: 3px; }
+  .contact .sub { font-size: 17px; color: #4a554e; padding-top: 16px; letter-spacing: 1px; }
+  .contact .btn-gold { display: inline-block; margin-top: 38px; }
+  .contact-lines { margin-top: 44px; font-size: 16px; color: #143A35; letter-spacing: 1px; }
+  .contact-lines span { margin: 0 18px; }
+  .contact-lines b { color: #a8842f; }
+
+  /* ---------- Footer ---------- */
+  footer { background: #143A35; padding: 54px 0 48px 0; text-align: center; }
+  footer img { width: 46px; height: 47px; }
+  .foot-cn { font-family: Georgia, "Noto Serif CJK SC", serif; font-size: 21px; font-weight: bold; color: #F5F0E4; letter-spacing: 6px; padding-top: 18px; }
+  .foot-en { font-size: 10px; letter-spacing: 3px; color: #E3C184; padding-top: 7px; }
+  .foot-tag { font-family: Georgia, serif; font-style: italic; font-size: 14.5px; color: rgba(245,240,228,.7); padding-top: 14px; }
+  .foot-contacts { font-size: 13.5px; color: rgba(245,240,228,.85); padding-top: 22px; letter-spacing: .5px; line-height: 2; }
+  .foot-copy { font-size: 12px; color: rgba(245,240,228,.45); padding-top: 24px; letter-spacing: 1px; }
+
+
+
+  /* ---------- Process ---------- */
+  .process { background: #F5F0E4; padding: 92px 0; }
+  .sec-sub { text-align: center; font-size: 16.5px; color: #4a554e; padding-top: 18px; letter-spacing: 1px; }
+  .steps { display: flex; margin-top: 58px; }
+  .step { width: 200px; border-top: 3px solid #E3C184; padding-top: 24px; }
+  .step + .step { margin-left: 20px; }
+  .step-num { font-family: Georgia, serif; font-size: 15px; color: #a8842f; letter-spacing: 2px; }
+  .step h3 { font-family: Georgia, "Noto Serif CJK SC", serif; font-size: 21px; font-weight: bold; color: #143A35; padding-top: 12px; letter-spacing: 1px; }
+  .step p { font-size: 14px; line-height: 1.85; color: #4a554e; padding-top: 12px; }
+
+  /* ---------- Why ---------- */
+  .why-grid { display: flex; margin-top: 58px; }
+  .why-item { width: 252px; border-left: 3px solid #E3C184; padding-left: 20px; }
+  .why-item + .why-item { margin-left: 24px; }
+  .why-item h3 { font-family: Georgia, "Noto Serif CJK SC", serif; font-size: 21px; font-weight: bold; color: #143A35; letter-spacing: 1px; }
+  .why-item p { font-size: 14.5px; line-height: 1.85; color: #4a554e; padding-top: 12px; }
+
+  /* ---------- FAQ ---------- */
+  .faq-grid { display: flex; flex-wrap: wrap; margin-top: 58px; }
+  .faq-item { width: 528px; padding-bottom: 36px; }
+  .faq-item:nth-child(odd) { margin-right: 24px; }
+  .faq-item .q { font-size: 17.5px; font-weight: bold; color: #143A35; letter-spacing: .5px; }
+  .faq-item .q b { color: #a8842f; }
+  .faq-item .a { font-size: 14.5px; line-height: 1.9; color: #4a554e; padding-top: 10px; }
+
+  /* ---------- Chat widget ---------- */
+  .wx { cursor: pointer; border-bottom: 1px dashed #a8842f; }
+  .wx:hover { color: #a8842f; }
+  .chat-fab { position: fixed; right: 28px; bottom: 110px; z-index: 999; width: 64px; height: 64px; border-radius: 50%; background: #E3C184; border: none; cursor: pointer; box-shadow: 0 6px 20px rgba(0,0,0,.25); font-size: 30px; line-height: 1; }
+  .chat-panel { position: fixed; right: 28px; bottom: 190px; z-index: 998; width: 320px; background: #fffdf8; border: 1.5px solid #E3C184; border-radius: 12px; box-shadow: 0 12px 32px rgba(0,0,0,.22); padding: 24px 24px 20px; display: none; text-align: center; }
+  .chat-panel.open { display: block; }
+  .chat-panel h3 { font-family: Georgia, "Noto Serif CJK SC", serif; font-size: 20px; color: #143A35; letter-spacing: 2px; }
+  .chat-panel .chat-qr img { width: 150px; height: 150px; margin: 16px auto 8px; display: block; }
+  .chat-panel .chat-wx { font-size: 17px; color: #143A35; }
+  .chat-panel .chat-wx b { color: #a8842f; }
+  .chat-panel .chat-note { font-size: 13.5px; color: #4a554e; line-height: 1.8; padding-top: 10px; }
+  .chat-panel .chat-close { position: absolute; top: 10px; right: 14px; background: none; border: none; font-size: 20px; color: #7a8178; cursor: pointer; }
+  .chat-toast { position: fixed; left: 50%; bottom: 200px; transform: translateX(-50%); z-index: 1000; background: #143A35; color: #F5F0E4; font-size: 15px; padding: 12px 22px; border-radius: 24px; display: none; white-space: nowrap; }
+  .chat-toast.show { display: block; }
+  .contact-lines .cl-row { padding-top: 12px; }
+  .contact-lines .cl-row:first-child { padding-top: 0; }
+
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="wrap header-in">
+    <div class="brand">
+      <img src="flyer-assets/mark-gold.png" alt="Sageward">
+      <div class="brand-text">
+        <div class="brand-cn">SAGEWARD</div>
+        <div class="brand-en">EDUCATION ADVISORY</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#services" style="color:#F5F0E4;font-size:15px;margin-left:34px;letter-spacing:1px;text-decoration:none">Services</a><a href="#seminar" style="color:#F5F0E4;font-size:15px;margin-left:34px;letter-spacing:1px;text-decoration:none">Seminar</a><a href="#about" style="color:#F5F0E4;font-size:15px;margin-left:34px;letter-spacing:1px;text-decoration:none">About the Founder</a><a href="#contact" style="color:#F5F0E4;font-size:15px;margin-left:34px;letter-spacing:1px;text-decoration:none">Contact</a>
+      <a href="index.html" style="color:#E3C184;font-size:14px;margin-left:34px;letter-spacing:1px;text-decoration:none">中文</a><a class="phone" href="tel:+19493310000" style="text-decoration:none">949-331-0000</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<div class="hero">
+  <img class="hero-mark" src="flyer-assets/mark-gold.png" alt="">
+  <div class="wrap hero-in">
+    <div class="hero-eyebrow">SAGEWARD EDUCATION ADVISORY</div>
+    <h1>SAGEWARD</h1>
+    <div class="hero-tag">&ldquo;Wisdom for the Journey Ahead.&rdquo;</div>
+    <div class="hero-rule">&nbsp;</div>
+    <div class="hero-desc1">COLLEGE ADMISSIONS &amp; EDUCATIONAL PLANNING</div>
+    <div class="hero-desc2">Personalized Guidance for Every Student</div>
+    <div class="hero-cn">U.S. college and high school applications, with long-term planning tailored to every student.</div>
+    <div class="hero-cta">
+      <a class="btn-gold" href="tel:+19493310000" style="text-decoration:none">Book Your First Consultation — First 30 Minutes Free</a>
+      <div class="hero-wechat">WeChat: <span class="wx" data-wx="truenancy" title="Click to copy WeChat ID">truenancy</span>&nbsp;&nbsp;|&nbsp;&nbsp;Phone: 949-331-0000</div>
+    </div>
+  </div>
+</div>
+
+<!-- Seminar -->
+<div class="seminar" id="seminar">
+  <div class="wrap">
+    <div class="seminar-card">
+      <div class="sem-left">
+        <div class="sem-label">PUBLIC SEMINAR · FIRST SESSION</div>
+        <div class="sem-date">November 8, 2026</div>
+        <div class="sem-time">Sunday, 1:00 – 4:00 PM</div>
+      </div>
+      <div class="sem-mid">
+        <div class="sem-title">The Life Journey of an Application:<br>How Yale and Stanford Read Undergraduate Applications</div>
+        <div class="sem-meta">Location: 930 Roosevelt, Irvine (Building Reception Lobby)<br>Register / Inquiries: WeChat <span class="wx" data-wx="truenancy" title="Click to copy WeChat ID">truenancy</span> · Phone 949-331-0000<br>Sign up online: <a href="https://forms.gle/KV7Hkrw3uj1m1WHN9" style="color:#143A35">Registration form</a></div>
+      </div>
+      <div class="sem-qr">
+        <img src="flyer-assets/qr-wechat.png" alt="WeChat QR code">
+        <div>Scan to add us on WeChat</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Services -->
+<section class="block" id="services">
+  <div class="wrap">
+    <div class="sec-eyebrow">OUR SERVICES</div>
+    <div class="sec-title">Our Services</div>
+    <div class="sec-rule">&nbsp;</div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-num">01</div>
+        <h3>College Admissions Planning</h3>
+        <div class="en">U.S. UNDERGRADUATE ADMISSIONS</div>
+        <p>For local American high school students — from academic planning and activity design to college selection, essays, and interviews — a step-by-step plan toward the right university, focused on Top 30 planning and including UC system support.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">02</div>
+        <h3>High School Admissions Planning</h3>
+        <div class="en">U.S. HIGH SCHOOL ADMISSIONS</div>
+        <p>School selection, essays, and interview preparation for U.S. high school applications — matched to each student's strengths and each family's goals, so the first step toward studying in America is a steady one.</p>
+      </div>
+      <div class="card gold-top">
+        <div class="card-num">03</div>
+        <h3>Comprehensive Planning</h3>
+        <div class="en">COMPREHENSIVE ANNUAL PLANNING</div>
+        <div class="price">Full-Journey Support</div>
+        <p>A year-long partnership, signed by school year: planning, college selection, essays, interviews, and submission follow-through in one place — so parents feel at ease and students always know their direction.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">04</div>
+        <h3>Individual Services</h3>
+        <div class="en">INDIVIDUAL SERVICES</div>
+        <p>College-list consultations, essay guidance, mock interviews, and more — choose individual services as needed and combine them flexibly. The first 30 minutes of your first consultation are free.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="sec-eyebrow">HOW IT WORKS</div>
+    <div class="sec-title">How It Works</div>
+    <div class="sec-rule">&nbsp;</div>
+    <div class="sec-sub">From the first consultation to the final submission, every step has a clear goal — students know where they're headed, and parents always know how things are progressing.</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3>First Consultation</h3>
+        <p>The first 30 minutes are free. We talk about your child's goals, where they stand, and what's on their mind — and first decide whether we're the right fit before talking about any plan.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>Full Assessment</h3>
+        <p>Grades, activities, interests, and personality — we map the starting point and identify strengths and gaps.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>Build the Plan</h3>
+        <p>Goals broken down by school year: coursework, activities, and the application timeline — one steady step at a time.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <h3>Guided Execution</h3>
+        <p>Regular check-ins on progress: activities moving forward, college-list adjustments, essays refined — someone is watching every step.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">05</div>
+        <h3>Submit &amp; Decide</h3>
+        <p>Application submission, interview preparation, and the final choice after offers arrive — supported all the way through.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why -->
+<section class="block" id="why">
+  <div class="wrap">
+    <div class="sec-eyebrow">WHY SAGEWARD</div>
+    <div class="sec-title">Why Sageward</div>
+    <div class="sec-rule">&nbsp;</div>
+    <div class="why-grid">
+      <div class="why-item">
+        <h3>Understands parents</h3>
+        <p>20 years on education's front line. She knows planning, and as a parent who has personally walked this road, she understands what Chinese families really need.</p>
+      </div>
+      <div class="why-item">
+        <h3>Based in the U.S.</h3>
+        <p>An Irvine-based institution, familiar with American high schools and the university landscape; face-to-face meetings are easy, and parents and students alike can communicate with confidence.</p>
+      </div>
+      <div class="why-item">
+        <h3>Planning first</h3>
+        <p>Beyond application season: guidance by school year, laid out in advance and focused on the student's long-term growth — not a last-minute package job.</p>
+      </div>
+      <div class="why-item">
+        <h3>Straight talk</h3>
+        <p>No guaranteed admissions, no exaggeration; every recommendation stands up to scrutiny.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<div class="about" id="about">
+  <div class="wrap about-in">
+    <div class="about-panel">
+      <img src="flyer-assets/mark-gold.png" alt="Sageward">
+      <div class="p-name">Nancy Cheng</div>
+      <div class="p-title">FOUNDER &amp; CHIEF PLANNING ADVISOR</div>
+    </div>
+    <div class="about-text">
+      <div class="about-eyebrow">ABOUT THE FOUNDER</div>
+      <h2>About the Founder</h2>
+      <p class="body">Nancy entered education in 2003, starting as a counselor at the Continuing Education College of the Law School of Northwest University in China, and has since worked from frontline counseling to campus management, coming to know every part of how education institutions operate. After moving to the United States, she worked long-term with major Chinese study-abroad agencies, and in recent years has focused on Top 30 college planning and applications for local American high school students.</p>
+      <p class="body">As a mother of four whose eldest entered Cornell University in fall 2026, she understands both how American universities read applications and what Chinese parents worry about and hope for. She insists on two principles: no guaranteed admissions, no exaggeration — helping each student find their own direction through honest planning and long-term companionship.</p>
+      <div class="about-points">
+        <div><b>Since 2003</b><span>20 years in education</span></div>
+        <div><b>Cornell Mom</b><span>Eldest entered Cornell, fall 2026</span></div>
+        <div><b>Based in Irvine</b><span>Bilingual service</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section class="block" id="faq">
+  <div class="wrap">
+    <div class="sec-eyebrow">FAQ</div>
+    <div class="sec-title">Frequently Asked Questions</div>
+    <div class="sec-rule">&nbsp;</div>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="q"><b>Q</b>&nbsp;&nbsp;When is the best time to start planning?</div>
+        <div class="a">The earlier, the more at ease you'll be. What matters is leaving time for activities and essay refinement, rather than rushing once application season arrives. Every student starts at a different time — the key is to start learning early and prepare step by step.</div>
+      </div>
+      <div class="faq-item">
+        <div class="q"><b>Q</b>&nbsp;&nbsp;What do your planning services include?</div>
+        <div class="a">Academic and activity planning, college selection, essay guidance, interview preparation, and submission follow-through, with full support across the school year — or individual services chosen as needed.</div>
+      </div>
+      <div class="faq-item">
+        <div class="q"><b>Q</b>&nbsp;&nbsp;Do you write the essays for students?</div>
+        <div class="a">No. Essays must come from the student. The advisor inspires ideas, helps shape the story, and refines the draft — but never writes on the student's behalf.</div>
+      </div>
+      <div class="faq-item">
+        <div class="q"><b>Q</b>&nbsp;&nbsp;Can you guarantee admission?</div>
+        <div class="a">No. No organization can guarantee admission outcomes. What we can guarantee is professional planning and full commitment throughout — helping each student present their very best.</div>
+      </div>
+      <div class="faq-item">
+        <div class="q"><b>Q</b>&nbsp;&nbsp;How does high school planning differ from college planning?</div>
+        <div class="a">High school planning centers on school fit and interview preparation; college planning places more weight on long-term activities and the essay narrative. Both need to start early — they simply differ in pace and emphasis.</div>
+      </div>
+      <div class="faq-item">
+        <div class="q"><b>Q</b>&nbsp;&nbsp;Is the first consultation free?</div>
+        <div class="a">The first 30 minutes are free. We'll start by talking about your child's goals and where they stand, then decide together whether to work together.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<div class="contact" id="contact">
+  <div class="wrap">
+    <h2>Book Your First Consultation</h2>
+    <div class="sub">The first 30 minutes of your first consultation are free — let's talk about your child's goals and where they stand before deciding how to plan.</div>
+    <a class="btn-gold" href="tel:+19493310000" style="text-decoration:none">Call to Book: 949-331-0000</a>
+    <div class="contact-lines">
+      <div class="cl-row"><span><b>WeChat</b> <span class="wx" data-wx="truenancy" title="Click to copy WeChat ID">truenancy</span></span>·<span><b>Email</b> <a href="mailto:nancyjcheng@gmail.com" style="color:#143A35">nancyjcheng@gmail.com</a></span></div>
+      <div class="cl-row"><span><b>Office</b> 930 Roosevelt, Suite 104, Irvine, CA 92620</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="wrap">
+    <img src="flyer-assets/mark-gold.png" alt="Sageward">
+    <div class="foot-cn">SAGEWARD</div>
+    <div class="foot-en">SAGEWARD EDUCATION ADVISORY</div>
+    <div class="foot-tag">&ldquo;Wisdom for the Journey Ahead.&rdquo;</div>
+    <div class="foot-contacts">Phone 949-331-0000&nbsp;&nbsp;·&nbsp;&nbsp;Email nancyjcheng@gmail.com&nbsp;&nbsp;·&nbsp;&nbsp;WeChat <span class="wx" data-wx="truenancy" title="Click to copy WeChat ID">truenancy</span><br>930 Roosevelt, Suite 104, Irvine, CA 92620</div>
+    <div class="foot-copy">© 2026 Sageward Education Advisory</div>
+  </div>
+</footer>
+
+<button class="chat-fab" id="chatFab" aria-label="Chat with us on WeChat">💬</button>
+<div class="chat-panel" id="chatPanel">
+  <button class="chat-close" id="chatClose">×</button>
+  <h3>Chat on WeChat</h3>
+  <div class="chat-qr"><img src="flyer-assets/qr-wechat.png" alt="WeChat QR code"></div>
+  <div class="chat-wx">WeChat ID: <b class="wx" data-wx="truenancy" title="Click to copy WeChat ID">truenancy</b> (click to copy)</div>
+  <div class="chat-note">Scan the code or copy the WeChat ID to add us<br>Phone: <a href="tel:+19493310000" style="color:#143A35">949-331-0000</a><br>First 30 minutes of your first consultation are free</div>
+</div>
+<div class="chat-toast" id="chatToast">WeChat ID copied — paste it in WeChat to add us</div>
+<script>
+(function(){
+  var toast = document.getElementById('chatToast');
+  var timer = null;
+  function showToast(){
+    toast.className = 'chat-toast show';
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(function(){ toast.className = 'chat-toast'; }, 2200);
+  }
+  function copyWx(text){
+    function fallback(){
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); } catch(e){}
+      document.body.removeChild(ta); showToast();
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(showToast).catch(fallback);
+    } else { fallback(); }
+  }
+  var els = document.querySelectorAll('.wx');
+  for (var i = 0; i < els.length; i++) {
+    els[i].addEventListener('click', function(){ copyWx(this.getAttribute('data-wx') || 'truenancy'); });
+  }
+  var panel = document.getElementById('chatPanel');
+  document.getElementById('chatFab').addEventListener('click', function(){
+    panel.className = panel.className.indexOf('open') >= 0 ? 'chat-panel' : 'chat-panel open';
+  });
+  document.getElementById('chatClose').addEventListener('click', function(){ panel.className = 'chat-panel'; });
+})();
+</script>
+
+</body>
+</html>
